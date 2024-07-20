@@ -1,0 +1,179 @@
+.colort{
+    color:rgb(136, 35, 35);
+    font-family: helvetica;
+    font-size: 20px;
+}
+.bg_1{
+    background-image: url(../IMAGEP/bcg/BG1.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.colort1{
+    color: rgb(0, 0, 46);
+    font-family: helvetica;
+    background-color: rgba(218, 165, 32, 0.452);
+    font-weight: bold;
+    font-size:80%;
+}
+.colort2{
+    color:darkslategrey;
+    font-family: helvetica;
+}
+.margin{
+    margin: 0px 0px 0px 20px;
+}
+.bgdiv1{
+    background-color:rgba(203, 167, 236, 0.856);
+}
+.bgdiv2{
+    background-color:rgba(212, 119, 162, 0.829);
+}
+.bgdiv3{
+    background-color:rgba(32, 24, 53, 0.466)
+}
+.bgdiv4{
+    background-color: rgba(32, 13, 28, 0.466);
+
+}
+
+.rotatx{
+    width: 50px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-iteration-count: 2s;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+@keyframes example{
+    0% {background-color:rgb(46, 8, 8);
+    right: 0px; top: 0px;}
+    25% {background-color: tomato;
+    right: 200px; top: 0px;}
+    50% {background-color: blue;
+    right: 200px; top: 200px;}
+    75% {background-color: aquamarine;
+    right: 0px; top: 200px;}
+    100% {background-color: black;
+    right: 0px; top: 0px;}
+}
+.bgimg1{
+    background-image:url(../../IMAGEP/bcg/BG1.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.bgcolor1{
+    background-color:thistle;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.bgcolor2{
+    background-color:rgb(150, 131, 150);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.bgcolor3{
+    background-color:rgb(82, 72, 82);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.bgcolor21{
+    background-color:rgb(172, 133, 172);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.bgimg2{
+    background-image:url(../image/bg/bg\ \(3\).jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:antiquewhite;
+}
+
+.Overflow{
+    overflow-wrap: normal;
+    overflow-y: auto ;
+    overflow-x: hidden;
+    height: 14rem;
+}
+
+.navKP{
+    font-family: georgia;
+    font-size: 10;
+    font-weight: bold;
+    color: green;
+    font-size: small;
+}
+
+.bgKP{
+    background-attachment: fixed;
+    background-color: rgb(245, 235, 216);
+    border: 2px solid rgb(90, 50, 90);
+}
+
+.navKPTxt{
+    font-family: georgia;
+    text-decoration: none;
+    font-weight: bold;
+    color: goldenrod;
+    font-family: georgia;
+}
+
+.strong{
+    font-size: 25px;
+    color: rgb(89, 89, 250);
+}
+
+.Active{
+    background-color: rgba(255, 99, 71, 0.747);
+    border-radius: 10px;
+}
+
+.evaActive{
+    background-color:whitesmoke;
+    border-radius: 10px;
+}
+
+
+.colornav{
+    color: rgb(46, 8, 8);
+}
+
+.ColorEva1{
+    background-color: rgb(136, 35, 35);
+}
+.ColorEva2{
+    background-color: rgb(118, 118, 252);
+}
+.ColorEva3{
+    background-color: whitesmoke;
+}
+
+.gallery-container{
+    overflow-x : auto;
+    white-space: nowrap;
+}
+
+.gallery-item{
+    display: inline-block;
+    margin: 10px;
+}
+
+.gallery-item img{
+    max-width:100%;
+    height: auto;
+
+}
+
+.gallery-container{
+
+}
+
+.marge {
+    margin-left:5px;
+}

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SINGUP::EVANGELISATION</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="text-light bg-dark">
+        <h6 class="text-center">Welcome</h6>
+    </div>
+    <br><br>
+
+    <div class="row">
+        <div class="col-md-4 mx-auto"  style="border: 5px solid green">
+            <h4 class="text-center text-success">S'inscrire</h4>
+            <img class="img-fluid" src="{% static 'image/eva.png' %}" alt="LOGO" width="50%" style="margin-left: 30%">
+            <form method="POST">
+                {% csrf_token %}
+                <label for="username">Nom</label>
+                <input class="form-control" type="text" name="username" id="username"><br>
+                <label for="password">Post-nom</label>
+                <input class="form-control" type="text" id="last_name" name="last_name"><br>
+                <label for="password">Prenom</label>
+                <input class="form-control" type="text" id="first_name" name="first_name"><br>
+                <label for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password"><br>
+                <label for="password">Email</label>
+                <input class="form-control" type="email" id="email" name="email"><br>
+                <label for="password">Photo de profil</label>
+                <input class="form-control" type="file" id="imgProfil" name="imgProfil"><br>
+
+
+                <button type="submit" class=" btn btn-success text-light" style="margin-left: 30%">
+                    S'inscrire
+                </button>
+                <button class=" btn btn-info" style="margin-left: 5%">
+                    <a class="link-dark text-decoration-none" href="{% url 'accounts:connexion' %}">Déja inscrit ?</a>
+                </button><br><br>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

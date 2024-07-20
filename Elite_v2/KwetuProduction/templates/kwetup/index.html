@@ -1,0 +1,76 @@
+{% load static %}
+{% include './resource2.html' %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col-md-10 mx-auto">
+ <div id="myCarousel" class="carousel slide ">
+      <div class="carousel-inner text-dark">
+        <div  class="carousel-item active" style="height:50%">
+            <video loop autoplay muted width="100%" height="100%" class="text-center" src="{% static 'video/pubHead.mp4' %}" type="video/mp4"></video>
+        </div>
+
+
+        <div class="carousel-item">
+          <img class="w-100 d-block img-fluid mx-auto" src="{% static 'image/evaAn.png' %}" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><fill="#eee"/></img>
+        </div>
+
+      </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+</script>
+
+    </div>
+</div>
+<!-- AFFICHAGE DE PRODUIT DANS SA PROPRE PAGE -->
+
+<div class="container col-md-12">
+<div class="row">
+{% for article in articles %}
+<div class="col-md-3 container mt-5 card">
+<!-- Image du produit -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <a href="{% url 'kwetu:articleId' article.id  %}">
+            <img src="{{ article.image.url }}" class="img-fluid card-img-top" style="width:90%" alt="{{ article.nomp }}">
+            </a>
+        </div>
+        <div class="col-md-4 text-success">
+            <h5>#{{ article.id }}</h5>
+        </div>
+    </div>
+    <!-- Détails du produit -->
+    <div class="row">
+        <div class="col-md-8 card-title">
+        <strong><h6>{{ article.nomp }}</h6></strong>
+        </div>
+        <!-- Prix et achat -->
+        <div class="col-md-4">
+        <h5 class="text-success">{{ article.prix }} $</h5>
+        <p class="text-success">Stock: {{ article.stock }}</p>
+        </div>
+         <strong>
+            <a class=" link-success text-decoration-none" href="{% url 'kwetu:articleId' article.id  %}">Voir en detaille...</a>
+        </strong>
+    </div>
+</div>
+    {% endfor %}
+</div>
+</div>
+</div>
+
+<hr>
+<div>
+    <h4>Django est puissant </h4>
+</div>
+{% endblock %}
+{% include './footer.html' %}

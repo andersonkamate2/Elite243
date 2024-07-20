@@ -1,0 +1,25 @@
+{% load static %}
+{% include './resource2.html' %}
+
+{% block content %}
+
+<h5>Ajouter un nouveau produit</h5>
+<form method="POST">
+    <label for="name">Nom du produit</label>
+    <input type="text" name="nomp" id="nomp">
+    <label for="name">Stock</label>
+    <input type="text" name="stock" id="stock">
+    <label for="name">Prix</label>
+    <input type="text" name="prix" id="prix">
+    <label for="name">Description</label>
+    <input type="text" name="descript" id="descript">
+    <label for="name">Image</label>
+    <input type="text" name="image" id="image">
+    <label for="name">Entreprise</label>
+    <input type="text" name="entrep" id="entrep">
+    <label for="name">Cathegorie</label>
+    <input type="text" name="cat" id="cat">
+    <input type="submit" value="Ajouter">
+</form>
+{% endblock %}
+{% include './footer.html' %}

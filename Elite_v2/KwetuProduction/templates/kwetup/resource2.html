@@ -1,0 +1,110 @@
+{% include './head.html' %}
+{% load static %}
+<title>Bienvenu::elite243+</title>
+<body>
+<header>
+<div class="" style="background-color: #000000;">
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-6 me-auto">
+     <BUtton class="btn btn-warning text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+        <a  href="#" class="navbar-toggler-icon">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{% static 'image/menu.png' %}" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><fill="#eee"/></img>
+        </a>
+     </BUtton>
+    </div>
+
+      <div class="col-6 me-auto text-end text-warning">
+          {% if  user.is_authenticated %}
+           <strong><a class="link-light text-decoration-none" href="{% url 'kwetu:profil' %}">{{ user.username }}</a></strong>
+              {% if user.imgProfil %}
+                 <img class="rounded-circle bd-placeholder-img bd-placeholder-img-lg featurette-image " width="5%" src="{{ user.imgProfil.url }}" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><fill="#eee"/></img>
+              {% else %}
+                 <img class="rounded-circle bd-placeholder-img bd-placeholder-img-lg featurette-image " width="5%" src="{% static 'image/defaultProfil.png' %}" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><fill="#eee"/></img>
+              {% endif %}
+          {% else %}
+              <strong><a class="link-light text-decoration-none" href="{% url 'accounts:register' %}">S'inscrir</a></strong>
+          {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+    <div class="offcanvas offcanvas-start bg-light" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header bg-secondary" >
+            <div class="container" id="offcanvasScrollingLabel">
+              <div class="row ">
+                <div class="col">
+                  {% if user.imgProfil %}
+                    <img class="rounded-circle bd-placeholder-img bd-placeholder-img-lg featurette-image  mx-auto" height="15%" width="15%" src="{{ user.imgProfil.url }}" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><fill="#eee"/></img>
+                  {% else %}
+                     <img class="rounded-circle bd-placeholder-img bd-placeholder-img-lg featurette-image mx-auto" width="15%" src="{% static 'image/defaultProfil.png' %}" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><fill="#eee"/></img>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn-close btn-light text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-header" style="margin: 20px;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <h3>Nos produits</h3>
+              <li class="nav-item">
+                <a class="nav-link text-dark" aria-current="page" href="{% url 'kwetu:index' %}">
+                   Acceuil
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="{% url 'kwetu:index' %}">
+                  Nos objectifs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="{% url 'kwetu:index' %}" tabindex="-1">
+                  Nos services
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="{% url 'kwetu:index' %}" tabindex="-1">
+                  A propos de nous
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="{% url 'kwetu:index' %}" tabindex="-1">
+                  Contact
+                </a>
+              </li>
+                <li>
+                    <a class="nav-link text-dark" href="{% url 'accounts:logout' %}">
+                        Deconnexion
+                    </a>
+                </li>
+            </ul>
+
+          </div>
+    </div>
+</div>
+</header>
+<main>
+            <div class="nav-scroller py-1 mb-2 blog-header bg-dark">
+              <nav class="nav nav-item d-flex justify-content-between">
+                  <a class="p-2 link-light text-decoration-none" href="{% url 'kwetu:index' %}"> <h6>Acceuil</h6> </a>
+                  <a class="p-2 link-light text-decoration-none" href="{% url 'kwetu:index' %}"> <h6>Nouveau produit</h6> </a>
+                  <a class="p-2 link-light text-decoration-none" href="{% url 'kwetu:index' %}"> <h6>Vos achats</h6> </a>
+                  <a class="p-2 link-light text-decoration-none" href="{% url 'kwetu:index' %}"> <h6>Genius edition</h6> </a>
+                  <a class="p-2 link-light text-decoration-none" href="{% url 'kwetu:index' %}"> <h6>Evangile pour tous</h6> </a>
+                  <a class="p-2 link-light text-decoration-none" href="{% url 'kwetu:index' %}"> <h6>Entreprise</h6></a>
+              </nav>
+            </div>
+    <div id="loader" class="spinner-border text-primary" role="status" style="position:fixed; top:50%;left:50%; transform:translate(-50%, -50%)">
+        <img class="img-fluid mx-auto" src="{% static 'image/el243.png' %}" alt="{{ user.username }}">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event){
+        document.getElementById('loader').style.display='none';
+        });
+    </script>
+  {% block content %}
+
+  {% endblock %}
+</main>

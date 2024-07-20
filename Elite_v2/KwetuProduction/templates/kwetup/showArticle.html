@@ -1,0 +1,40 @@
+{% load static %}
+{% include './resource2.html' %}
+
+{% block content %}
+<!-- AFFICHAGE DE PRODUIT DANS SA PROPRE PAGE -->
+
+<div class="container col-md-12">
+<div class="row">
+<div class="col-md-2 container mt-5">
+<!-- Image du produit -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+        <img src="{{ produit.image.url }}" class="img-fluid" alt="{{ produit.nomp }}">
+        </div>
+    </div>
+    <!-- Détails du produit -->
+    <div class="row">
+        <div class="col-md-8">
+        <h4>{{ produit.nomp }}</h4>
+        <p class="lead">{{ produit.description }}</p>
+        </div>
+        <!-- Prix et achat -->
+        <div class="col-md-4">
+        <h5 class="text-success">{{ produit.prix }} $</h5>
+        <p class="text-success">Stock: {{ article.stock }}</p>
+        <p class="text-success">Entreprise: {{ produit.idEntrep }}</p>
+        <p class="text-success">Cathegorie: {{ produit.idCat }}</p>
+        <button class="btn btn-primary btn-small">Acheter</button>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<div class="col-12-md text-center">
+    <a class="nav-link link-success" href="{% url 'kwetu:index' %}"><<<< Retour</a>
+</div>
+{% endblock %}
+{% include './footer.html' %}

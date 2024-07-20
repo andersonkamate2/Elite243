@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div class="col-md-6 me-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Modifier le profil</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for client in clients %}
+                        <form method="POST" action="{% url 'accounts:update_user' client.id %}">
+                            {% endfor %}
+                            {% csrf_token %}
+
+                                <label for="nom">Nom</label>
+                                <input class="form-control" type="text" value="{{ user.username }}" name="username" id="username"><br>
+
+                                <label for="prenom">Prénom</label>
+                                <input class="form-control" type="text" value="{{ user.last_name }}" name="last_name" id="last_name">
+
+                                <label for="poste">Prenom</label>
+                                <input class="form-control" type="text" value="{{ user.first_name }}" name="first_name" id="first_name">
+
+                                <label for="email">Email</label>
+                                <input class="form-control" type="text" value="{{ user.email }}" name="email" id="email"><br>
+                                <br>
+                                 <button class="btn btn-primary" type="submit">Modifier</button>
+                                <br><br>
+
+                        </form>
+
+                    </div>
+                    </div>
+                </div>
+</div>
+</body>
+</html>
